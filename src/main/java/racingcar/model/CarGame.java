@@ -10,6 +10,11 @@ public class CarGame {
 	private List<Car> carList = new ArrayList<>();
 	private int tryNum = 0;
 
+	public CarGame() {
+		this.carList = new ArrayList<>();
+		this.tryNum = 0;
+	}
+
 	public List<Car> getCarList() {
 		return carList;
 	}

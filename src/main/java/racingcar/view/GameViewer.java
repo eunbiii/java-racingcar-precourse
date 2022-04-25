@@ -18,7 +18,7 @@ public class GameViewer {
             winner += car.getName()+", ";
         }
         winner = winner.substring(0, winner.length()-2);
-        System.out.println("최종 우승자: " + winner);
+        System.out.println("최종 우승자는 " + winner+ " 입니다.");
 	}
 
 	/**

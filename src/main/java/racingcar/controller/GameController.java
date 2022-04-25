@@ -18,26 +18,30 @@ public class GameController {
 
     // 게임을 시작하지.
     public void startGame(){
-        // 1. INIT
-        //  1-1. 차 이름을 입력받는다
-        //  1-2. try횟수를 입력받는다
-        initGame();
-        // 2. Try횟수만큼 시도한다.
-        //  2-1. 이동
-        //  2-2. 이동 출력
-        doGame();
+        try {
+            // 1. INIT
+            //  1-1. 차 이름을 입력받는다
+            //  1-2. try횟수를 입력받는다
+            initGame();
+            // 2. Try횟수만큼 시도한다.
+            //  2-1. 이동
+            //  2-2. 이동 출력
+            doGame();
 
-        // 3. 최종
-        //  3-1. 우승자 선별
-        //  3-2. 우승자 출력
-        resultGame();
+            // 3. 최종
+            //  3-1. 우승자 선별
+            //  3-2. 우승자 출력
+            resultGame();
+        }catch (Exception e){
+
+        }
     }
 
 
     // 게임 초기화
     //  1-1. 차 이름을 입력받는다
     //  1-2. try횟수를 입력받는다
-    public void initGame(){
+    public void initGame() throws Exception{
         carGame = new CarGame();
         carGame.setCarList(getCarList());
         carGame.setTryNum(getTryNum());
@@ -89,6 +93,7 @@ public class GameController {
             if(maxNum < car.getMove()){
                 resultList.clear();
                 resultList.add(car);
+                maxNum = car.getMove();
             }
         }
         gameViewer.printGameResult(resultList);
